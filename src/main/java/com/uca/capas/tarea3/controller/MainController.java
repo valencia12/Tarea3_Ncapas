@@ -68,9 +68,10 @@ public class MainController {
 		}
 		
 		if(arrayError.isEmpty()){
-			System.out.println("Error");
+			mav.setViewName("AcessoC");
 		}else {
-			System.out.println("Bienvenido");
+			mav.addObject("req", arrayError);
+			mav.setViewName("AcessoD");
 			}
 			return mav;
 		}
