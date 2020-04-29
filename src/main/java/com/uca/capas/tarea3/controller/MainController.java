@@ -67,28 +67,20 @@ public class MainController {
 			arrayError.add("la longitud debe tener 8 digitos!");
 		}
 
-		if(arrayError.isEmpty()){
-			mav.setViewName("Registro completo");
-		}else {
-			mav.addObject("req", arrayError);
-			mav.setViewName("Error en el registro");
-			}
-			return mav;
-		}
 
 
-	public boolean compararFecha(String fecha_1) throws ParseException {
-		String fechaMin = "2003-01-01";
-		
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); 
 
-		Date fecha_12 = format.parse(fecha_1);
-		Date fecha_2 = format.parse(fechaMin);
-
-		if(fecha_12.before(fecha_2)) {
-			return true;
-		}else {
-			return false;
+		public boolean compararFecha(String fecha1) throws ParseException {
+			String fechaMin = "2003-01-01";
+			SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd"); 
+			
+			Date fechaEntrada1 = formateador.parse(fecha1);
+			Date fechaEntrada2 = formateador.parse(fechaMin);
+			
+			if(fechaEntrada1.before(fechaEntrada2)) {
+				return true;
+			}else {
+				return false;
+			}  
 		}
 	}
-}
