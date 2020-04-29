@@ -66,6 +66,14 @@ public class MainController {
 		if(phone.length() != 8) {
 			arrayError.add("la longitud debe tener 8 digitos!");
 		}
+		
+		if(arrayError.isEmpty()){
+			System.out.println("Error");
+		}else {
+			System.out.println("Bienvenido");
+			}
+			return mav;
+		}
 
 
 
